@@ -1,0 +1,24 @@
+{
+  "name": "campusconnect",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CampusConnect — placement-drive hub with RBAC, job listings, deadline reminders, application tracking and prep tracker",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "mongo": "node scripts/start-mongo.js",
+    "mongo:setup": "node scripts/setup-mongo.js",
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n mongo,server,client -c yellow,blue,green \"node scripts/start-mongo.js\" \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "seed": "npm run seed --prefix server",
+    "build": "npm run build --prefix server && npm run build --prefix client",
+    "typecheck": "npm run typecheck --prefix server && npm run typecheck --prefix client",
+    "smoke": "npm run smoke --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

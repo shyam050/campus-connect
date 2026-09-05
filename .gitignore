@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Builds
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Uploads (local fallback storage)
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Local MongoDB dev data & binary
+.mongodb-data/
+.mongodb-bin/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

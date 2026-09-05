@@ -1,0 +1,25 @@
+services:
+  # Single-service deployment: the Express API serves the built React app.
+  # One free web service → one link for the whole app.
+  - type: web
+    name: campusconnect
+    runtime: node
+    plan: free
+    buildCommand: MONGOMS_DISABLE_POSTINSTALL=1 npm run install:all && npm run build
+    startCommand: node server/dist/index.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Paste your Atlas connection string in the Render dashboard
+      - key: MONGODB_URI
+        sync: false
+      # Auto-generated JWT secrets
+      - key: ACCESS_SECRET
+        generateValue: true
+      - key: REFRESH_SECRET
+        generateValue: true
+      # Set to your final onrender.com URL after the first deploy
+      # (used in reminder emails' "Apply now" links)
+      - key: FRONTEND_URL
+        sync: false

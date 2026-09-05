@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply bg-paper text-slate-900 font-sans;
+    font-feature-settings: 'cv05', 'ss01';
+  }
+  ::selection {
+    @apply bg-brand-100 text-brand-900;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-paper;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 border-2 border-solid border-paper;
+  }
+}
+
+@layer components {
+  .input-base {
+    @apply w-full rounded-sm border border-line bg-white px-3 py-2 text-sm text-slate-900 outline-none transition
+      placeholder:text-slate-400 focus:border-brand-600 focus:ring-1 focus:ring-brand-600 disabled:opacity-60;
+  }
+  .label-mono {
+    @apply font-mono text-[11px] font-medium uppercase tracking-[0.09em] text-slate-500;
+  }
+  .table-base {
+    @apply w-full text-left text-sm;
+  }
+  .table-base thead th {
+    @apply border-b border-slate-200 bg-paper-deep/50 px-4 py-2.5 font-mono text-[11px] font-medium uppercase tracking-[0.09em] text-slate-500;
+  }
+  .table-base tbody td {
+    @apply border-b border-slate-200/70 px-4 py-3 align-middle;
+  }
+  .hairline {
+    @apply border-line;
+  }
+}
