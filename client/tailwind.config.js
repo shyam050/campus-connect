@@ -4,9 +4,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        // Single-typeface system: Inter everywhere. Hierarchy comes from
+        // size, weight and letter-spacing — not from swapping fonts.
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Fraunces', 'Georgia', 'serif'],
-        mono: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        display: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
         // Cool paper & ink — the base surfaces
